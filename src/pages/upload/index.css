@@ -1,0 +1,207 @@
+.upload-container {
+    flex: 1;
+    flex-direction: column;
+    padding: 30px 0;
+    align-items: center;
+}
+
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  margin: 0;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.upload-main {
+  width: 314px;
+  height: 370px;
+}
+.upload-main,
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper {
+  height: 100%;
+  max-width: 314px;
+  height: 370px;
+  background: #fff url(https://telegraph-image.pages.dev/bg.svg);
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-position: top;
+  border-radius: 3px;
+  box-shadow: 0 0 32px 0 rgba(12, 12, 13, 0.1),
+    0 2px 16px 0 rgba(12, 12, 13, 0.05);
+  color: #5e6878;
+  font-size: 14px;
+}
+.area,
+.wrapper {
+  width: 100%;
+  flex-direction: column;
+}
+.area {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.svg-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: relative;
+  border: 4px solid #c7cfd7;
+}
+.svg-wrapper:before {
+  content: " ";
+  position: absolute;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
+  top: -1px;
+  left: -1px;
+  border-radius: 50%;
+}
+.svg-wrapper .svg-box {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.svg-wrapper .svg-box svg.upload-icon {
+  width: 100%;
+  height: 100%;
+}
+.waitting .svg-wrapper:before {
+  animation: bo-data 1.5s linear infinite;
+}
+.text-area {
+  padding: 50px 0 10px;
+  font-size: 12px;
+}
+.upload-btn-area input[name="Files"] {
+  display: none;
+}
+.upload-btn-area .btn-upload {
+  background-color: #0297f8;
+  border-radius: 40px;
+  display: inline-block;
+  color: #fff;
+  font-weight: 700;
+  padding: 8px 30px;
+  cursor: pointer;
+}
+.upload-btn-area .btn-upload:hover {
+  opacity: 0.8;
+  background-color: rgba(2, 151, 248, 0.85);
+}
+.url-box {
+  height: 43px;
+  width: 80%;
+  margin-top: 15px;
+}
+.copy-url {
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.copy-url .input-group {
+  display: flex;
+  background-repeat: no-repeat;
+  border: 1px solid #d1d5da;
+  border-radius: 3px;
+}
+.copy-url .input-group .input-sm,
+.copy-url .input-group {
+  flex: 1;
+  box-shadow: inset 0 1px 2px rgba(27, 31, 35, 0.075);
+}
+.copy-url .input-group .input-sm {
+  outline: 0;
+  font-size: 12px;
+  line-height: 20px;
+  padding: 3px 5px;
+  border: none;
+}
+.copy-url .input-group .input-group-button {
+  padding: 0 8px;
+  background-color: #eff3f6;
+  background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
+  color: #24292e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-left: 1px solid #d1d5da;
+}
+.copy-url .input-group .input-group-button:hover {
+  background-color: #e6ebf1;
+  background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%);
+  background-position: -0.5em;
+  border-color: rgba(27, 31, 35, 0.35);
+}
+.copy-url .input-group .input-group-button:active {
+  background-color: #e9ecef;
+  background-image: none;
+  border-color: rgba(27, 31, 35, 0.35);
+  box-shadow: inset 0 0.15em 0.3em rgba(27, 31, 35, 0.15);
+}
+.copy-url .re-upload {
+  cursor: pointer;
+  padding: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.uploading svg.upload-icon {
+  animation: up-data 1s linear infinite;
+}
+/*! CSS Used keyframes */
+@-webkit-keyframes bo-data {
+  0% {
+    transform: scale(1);
+    border: 1px solid #c7cfd7;
+  }
+  to {
+    transform: scale(1.5);
+    border: 1px solid rgba(199, 207, 215, 0.1);
+  }
+}
+@keyframes bo-data {
+  0% {
+    transform: scale(1);
+    border: 1px solid #c7cfd7;
+  }
+  to {
+    transform: scale(1.5);
+    border: 1px solid rgba(199, 207, 215, 0.1);
+  }
+}
+@-webkit-keyframes up-data {
+  0% {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+@keyframes up-data {
+  0% {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
