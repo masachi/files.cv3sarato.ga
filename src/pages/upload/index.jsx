@@ -2,12 +2,6 @@ import "./index.css";
 
 const Upload = () => {
   return (
-    // <div class={'upload-container'}>
-    //   <span>233</span>
-    // </div>
-
-    <div data-server-rendered="true" id="__nuxt">
-      <div id="__layout">
         <div>
           <div class="container">
             <div class="background-container">
@@ -193,8 +187,6 @@ const Upload = () => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
   );
 };
 
