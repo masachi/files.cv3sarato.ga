@@ -19,20 +19,25 @@ const Upload = () => {
           // fake server to simulate loading a 'local' server file and processing a file
           process: (fieldName, file, metadata, load) => {
             // simulates uploading a file
-            setTimeout(() => {
-              load(Date.now());
-            }, 1500);
+            var data = new FormData()
+            data.append('file', file)
+
+            fetch('https://upload-service.cv3sarato.ga/api/upload', {
+                method: 'POST',
+                body: data,
+                headers: {
+                    Authorization: "fa1385ffecef4945b0ddfd505a6a2bca"
+                }
+            }).then(load)
           },
           load: (source, load) => {
             // simulates loading a file from the server
-            fetch(source)
-              .then((res) => res.blob())
-              .then(load);
+            console.error("source", source);
           },
         }}
         onupdatefiles={(fileItems) => {
           // Set currently active file objects to this.state
-          setFiles(fileItems.map((fileItem) => fileItem.file));
+        //   setFiles(fileItems.map((fileItem) => fileItem.file));
         }}
         allowRevert={false}
         allowRemove={true}
