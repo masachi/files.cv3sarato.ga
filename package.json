@@ -1,19 +1,31 @@
 {
-  "name": "vite-template-solid",
-  "version": "0.0.0",
-  "description": "",
-  "scripts": {
-    "start": "vite",
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview"
-  },
-  "license": "MIT",
-  "devDependencies": {
-    "vite": "^3.0.9",
-    "vite-plugin-solid": "^2.3.0"
-  },
+  "name": "files.cv3sarato.ga",
+  "version": "1.0.0",
+  "private": true,
   "dependencies": {
-    "solid-js": "^1.5.1"
-  }
+    "filepond": "^4.30.3",
+    "filepond-plugin-file-validate-size": "^2.2.7",
+    "filepond-plugin-file-validate-type": "^1.2.8",
+    "filepond-plugin-image-exif-orientation": "^1.0.11",
+    "filepond-plugin-image-preview": "^4.6.11",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-filepond": "^7.1.2",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
