@@ -3,6 +3,7 @@ import "./App.css";
 
 // Import React FilePond
 import { registerPlugin } from "react-filepond";
+import 'antd/dist/antd.css';
 
 
 
