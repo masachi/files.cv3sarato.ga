@@ -86,9 +86,20 @@ const Upload = () => {
             ></FilePond>
 
             {
+                remoteFiles && remoteFiles.length > 1 &&
+                <Button icon={<CopyOutlined/>} onClick={() => {
+                    let copiedText = ""
+                    remoteFiles.forEach((item, index) => {
+                        copiedText += `${item.url}\n`;
+                    });
+                    navigator.clipboard.writeText(copiedText);
+                    message.info("一键复制成功")
+                }}>一键复制</Button>
+            }
+            {
                 remoteFiles.map((item, index) => {
                     return (
-                        <Input.Group compact style={{marginTop: 10}}>
+                        <Input.Group key={item.hash} compact style={{marginTop: 10}}>
                             <Input
                                 id={item.hash}
                                 style={{width: 'calc(100% - 200px)'}}
@@ -98,6 +109,7 @@ const Upload = () => {
                             <Tooltip title="复制URL" data-clipboard-target={`#${item.hash}`}>
                                 <Button icon={<CopyOutlined/>} onClick={() => {
                                     navigator.clipboard.writeText(item.url)
+                                    message.info("复制成功")
                                 }}/>
                             </Tooltip>
                         </Input.Group>
